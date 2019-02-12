@@ -6,14 +6,14 @@
 /*   By: vkhomenk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 14:24:51 by vkhomenk          #+#    #+#             */
-/*   Updated: 2019/02/12 16:23:51 by vkhomenk         ###   ########.fr       */
+/*   Updated: 2019/02/12 17:29:39 by vkhomenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 #include <stdlib.h>
 
-static void	ft_lstdel(t_list **tmp)
+void	ft_lstdel(t_list **tmp)
 {
 	if ((*tmp)->next)
 		ft_lstdel(&(*tmp)->next);
@@ -21,7 +21,7 @@ static void	ft_lstdel(t_list **tmp)
 	*tmp = NULL;
 }
 
-static int	addr_cmp(t_list *cmp, const t_list *list)
+int		addr_cmp(t_list *cmp, const t_list *list)
 {
 	t_list	*data;
 
@@ -35,12 +35,12 @@ static int	addr_cmp(t_list *cmp, const t_list *list)
 	return (0);
 }
 
-static void	write_addr(t_list **data, const t_list *addr)
+void	write_addr(t_list **data, const t_list *addr)
 {
 	*data = (t_list*)addr;
 }
 
-int			cycle_detector(const t_list *list)
+int		cycle_detector(const t_list *list)
 {
 	t_list	*tmp;
 	t_list	*start;
