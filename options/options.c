@@ -6,13 +6,13 @@
 /*   By: vkhomenk <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 16:34:39 by vkhomenk          #+#    #+#             */
-/*   Updated: 2019/02/12 17:19:44 by vkhomenk         ###   ########.fr       */
+/*   Updated: 2019/02/12 17:31:49 by vkhomenk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-static int	options(int ac, char **av, char *bytes)
+int		options(int ac, char **av, char *bytes)
 {
 	int		i;
 	int		j;
@@ -38,7 +38,7 @@ static int	options(int ac, char **av, char *bytes)
 	return (res);
 }
 
-int			main(int ac, char **av)
+int		main(int ac, char **av)
 {
 	int		res;
 	char	bytes[32];
